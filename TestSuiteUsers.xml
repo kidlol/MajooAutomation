@@ -1,0 +1,8 @@
+<suite name="UsersSuite">
+    <test name="UsersTest">
+        <classes>
+            <class name="users.ListUsersTest"/>
+            <class name="users.SingleUserTest"/>
+        </classes>
+    </test>
+</suite>
