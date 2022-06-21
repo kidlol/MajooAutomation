@@ -18,7 +18,7 @@ public class SecondTest
         RequestSpecification request = given();
 
         JSONObject bodyReq = new JSONObject();
-        bodyReq.put("name","Jhonny Deep");
+        bodyReq.put("name","Johnny Deep");
         bodyReq.put("job","Actor Movie");
 
         request.header("Content-type", "Application/json");

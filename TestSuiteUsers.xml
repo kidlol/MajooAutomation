@@ -3,6 +3,12 @@
         <classes>
             <class name="users.ListUsersTest"/>
             <class name="users.SingleUserTest"/>
-        </classes>
+            <class name="users.Create"/>
+            <class name="users.Update"/>
+            <class name="register.register_successful"/>
+            <class name="register.register_unsuccessful"/>
+            <class name="auth.login_successful"/>
+            <class name="auth.login_unsuccessful"/>
+       </classes>
     </test>
 </suite>

@@ -1,10 +1,13 @@
 package users;
 
 import io.restassured.RestAssured;
+import io.restassured.module.jsv.JsonSchemaValidator;
 import io.restassured.response.Response;
 import io.restassured.specification.RequestSpecification;
 import org.testng.ITestContext;
 import org.testng.annotations.Test;
+
+import java.io.File;
 
 import static io.restassured.RestAssured.given;
 
@@ -18,7 +21,8 @@ public class ListUsersTest
 
         request.param("page",2);
         Response response = request.get("/api/users");
-        response.then().assertThat().statusCode(200);
+        String schemaPath = "src/resources/ListUserSchema.json";
+        response.then().assertThat().statusCode(200).body(JsonSchemaValidator.matchesJsonSchema(new File(schemaPath)));
 
         System.out.println(response.jsonPath().getString("data[1].id"));
         context.setAttribute("id_user",response.jsonPath().getInt("data[1].id"));
